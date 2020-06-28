@@ -1,4 +1,4 @@
-Giter8 template for Scala + GraalVM native CLI applications
+Giter8 template for Scala + GraalVM native CLI apps
 ========
 
 This giter8 template is made allows to build a Scala CLI application which can be translated to a native image by [GraalVM](https://www.graalvm.org/).
