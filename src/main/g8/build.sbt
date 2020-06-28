@@ -10,8 +10,7 @@ lazy val root = (project in file(".")).
     graalVMNativeImageOptions ++= Seq(
         "--initialize-at-build-time",
         "--no-fallback",
-        "--no-server",
-        // "--static" DARWIN does not support building static executable images
+        "--no-server"
     ),    
     libraryDependencies ++= Seq(
       // CLI option parser
