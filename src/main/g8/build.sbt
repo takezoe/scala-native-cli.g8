@@ -11,7 +11,7 @@ lazy val root = (project in file(".")).
         "--initialize-at-build-time",
         "--no-fallback",
         "--no-server",
-        "--static"
+        // "--static" DARWIN does not support building static executable images
     ),    
     libraryDependencies ++= Seq(
       // CLI option parser
