@@ -12,6 +12,7 @@ lazy val root = (project in file("."))
       "--no-fallback",
       "--no-server"
     ),
+    nativeImageJvm := "graalvm",
     libraryDependencies ++= Seq(
       // CLI option parser
       "com.github.scopt" %% "scopt" % "3.7.1",
