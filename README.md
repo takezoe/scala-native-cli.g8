@@ -15,18 +15,10 @@ $ sbt new takezoe/scala-native-cli.g8
 To generate a native image, run the following command at the root directory of the created project.
 
 ```
-$ sbt graalvm-native-image:packageBin
+$ sbt nativeImage
 ```
 
-The native image is generated in `target/graalvm-native-image` directory.
-
-Note that you need to install GraalVM and `native-image` command beforehand.
-
-1. Download and install GraalVM from: https://github.com/graalvm/graalvm-ce-builds/releases
-2. Install `native-image` command as follows:
-   ```
-   $ gu install native-image
-   ```
+The native image is generated in `target/native-image` directory.
 
 Libraries
 --------

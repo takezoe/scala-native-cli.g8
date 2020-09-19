@@ -2,16 +2,16 @@
 ThisBuild / organization := "$package$"
 ThisBuild / scalaVersion := "$scala_version$"
 
-lazy val root = (project in file(".")).
-  enablePlugins(GraalVMNativeImagePlugin).
-  settings(
+lazy val root = (project in file("."))
+  .enablePlugins(NativeImagePlugin)
+  .settings(
     name := "$name$",
     version := "$version$",
-    graalVMNativeImageOptions ++= Seq(
-        "--initialize-at-build-time",
-        "--no-fallback",
-        "--no-server"
-    ),    
+    nativeImageOptions ++= List(
+      "--initialize-at-build-time",
+      "--no-fallback",
+      "--no-server"
+    ),
     libraryDependencies ++= Seq(
       // CLI option parser
       "com.github.scopt" %% "scopt" % "3.7.1",
@@ -24,5 +24,6 @@ lazy val root = (project in file(".")).
       "ch.qos.logback" % "logback-classic" % "1.2.3",
       // Test
       "org.scalatest" %% "scalatest" % "3.0.8" % Test
-    )
+    ),
+    Compile / mainClass := Some("$package$.Main"),
   )
